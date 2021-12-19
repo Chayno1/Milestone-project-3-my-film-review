@@ -10,9 +10,39 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Document</title>
+    <title>MyFilmReview</title>
 </head>
 <body>
+
+    <header>
+        <!--navbar-->
+        <nav class="#3949ab indigo darken-1">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">My Film Review</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Log Out</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <!--mobile navbar-->
+          <ul class="sidenav" id="mobile-demo">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Log Out</a></li>
+          </ul>
+    </header>
+
+    <main>
     {% for film in films %}
     {{ film.title }}<br>
     {{ film.director }}<br>
@@ -21,6 +51,24 @@
     {{ film.synopsis }}<br>
     {{ film.avg_rating }}<br>
     {% endfor %}
+
+</main>
+    
+    <footer class="page-footer indigo darken-1">
+        <div class="container">
+          <div class="row social-links">
+            <div class="col s4">
+                <a href="https://www.facebook.com/" target="_blank" aria-label="facebook-link"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="col s4">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="instagram-link"><i class="fab fa-instagram-square"></i></a>
+            </div>
+            <div class="col s4">
+                <a href="https://twitter.com/" target="_blank" aria-label="twitter-link"><i class="fab fa-twitter-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
