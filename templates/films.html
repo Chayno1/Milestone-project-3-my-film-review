@@ -1,43 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <main>
-        <div class="row ">
-            <div class="col s12 m4 l8">
-            </div>
-        </div>
-        <div class="row main-body">
-           <div class="col s12 m4 l8">
-                 
-            {% for film in films %}
-            {{ film.title }}<br>
-            {{ film.director }}<br>
-            {{ film.release_year }}<br>
-            {{ film.genre }}<br>
-            {{ film.synopsis }}<br>
-            {{ film.avg_rating }}<br>
-            {% endfor %}
-
             <ul class="collapsible">
+              {% for film in films %}
                 <li>
-                  <div class="collapsible-header white-text indigo darken-1"><i class="fas fa-caret-down"></i>First</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                  <div class="collapsible-header white-text indigo darken-1">
+                    <i class="fas fa-caret-down"></i>
+                    <strong>{{ film.title }}</strong> &emsp; Directed by :- {{ film.director }} &emsp; Rating : {{ film.avg_rating }}
+                  </div>
+                  <div class="collapsible-body indigo-text white">
+                    Genre :- {{ film.genre }} <br> <br> Synopsis :- <br> <p>{{ film.synopsis }}</p> 
+                  </div>
                 </li>
-                <li>
-                  <div class="collapsible-header white-text indigo darken-1"><i class="fas fa-caret-down"></i>Second</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                  <div class="collapsible-header white-text indigo darken-1"><i class="fas fa-caret-down"></i>Third</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
+                {% endfor %}
               </ul>
-            
-
-            </div>
-        </div>
-
-  </main>
 
   {% endblock %}
     
