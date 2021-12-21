@@ -34,6 +34,13 @@ body {
     flex: 1 0 auto;
   }
 
+.page-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .social-links i {
     font-size: 200%;
     padding: 5%;
