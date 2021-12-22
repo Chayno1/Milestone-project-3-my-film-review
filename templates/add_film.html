@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="add_film">Add Film</h3>
+<div class="row indigo-text white">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="fas fa-film"></i>
+          <input id="film_title" type="text" class="validate" required>
+          <label for="film_title">Film Title</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="fas fa-bullhorn"></i>
+          <input id="director" type="text" class="validate" required>
+          <label for="director">Director</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="far fa-calendar-alt"></i>
+            <input id="release_year" type="text" class="datepicker validate" required>
+            <label for="release_year">Release Year</label>
+          </div>
+          <div class="input-field col s12">
+            <select multiple>
+              <option value="" disabled selected>Choose your option(s)</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label>Select Genre</label>
+          </div>
+      </div>
+    </form>
+  </div>
+
+ {% endblock %}
+
+
+<footer class="page-footer indigo darken-1">
+    <div class="container">
+    <div class="row social-links">
+        <div class="col s4">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="facebook-link"><i class="fab fa-facebook-square"></i></a>
+        </div>
+        <div class="col s4">
+            <a href="https://www.instagram.com/" target="_blank" aria-label="instagram-link"><i class="fab fa-instagram-square"></i></a>
+        </div>
+        <div class="col s4">
+            <a href="https://twitter.com/" target="_blank" aria-label="twitter-link"><i class="fab fa-twitter-square"></i></a>
+        </div>
+    </div>
+    </div>
+</footer>
