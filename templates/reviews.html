@@ -4,26 +4,24 @@
        
         <h2 class="film_list">Film Reviews</h2>
             
-              
-                
-                <div class="divider"></div>
-                <div class="section white-text indigo darken-1">
-                  <h5>Film</h5>
-                  <p>&emsp;<strong>{{ film.title }}</strong></p>
-                  <p>Directed by :- {{ film.director }} &emsp;</p>
-                  <p>Rating : {{ film.rating }} &emsp;</p>
-                  {% for genre in film.genre %}
-                    <span class="new badge" data-badge-caption="{{genre}}"></span>
-                  {% endfor %}
-                </span>
-                <p>{{ film.synopsis }}</p>
-                <p> Added by :- {{ film.created_by }} </p> 
-                </div>
-                <div class="divider"></div>
-                <div class="section white-text indigo darken-1">
-                  <h5>Review</h5>
-                  <p> {{ film.review }}</p>
-                </div>
+     <div class="divider"></div>
+          <div class="section white-text indigo darken-1">
+            <div class="row">
+              <div class="col s7 push-s5"><span class="flow-text"><p>{{ film.synopsis }}</p><p> Added by :- {{ film.created_by }} </p> 
+                {% for genre in film.genre %}
+                <span class="new badge" data-badge-caption="{{genre}}"></span>
+                {% endfor %}</span>
+              </div>
+              <div class="col s5 pull-s7"><span class="flow-text"><h2><strong>{{ film.title }}</strong></h2>
+                <p>Directed by :- {{ film.director }}</p><p>Rating : {{ film.rating }} &emsp;</p></span>
+              </div>
+            </div> 
+          </div>
+          <div class="divider"></div>
+          <div class="section white-text indigo darken-1">
+            <h5>Review</h5>
+            <p> {{ film.review }}</p>
+          </div>
                 
                 
 
