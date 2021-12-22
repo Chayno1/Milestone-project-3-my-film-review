@@ -7,28 +7,33 @@
         <!-- Film Title -->
       <div class="row">
         <div class="input-field col s6">
-          <i class="fas fa-film"></i>
-          <input id="film_title" type="text" name="film_title" class="validate" minlength="1" maxlength="30" required>
+          <i class="fas fa-film"></i> 
+          <input id="film_title" type="text" name="film_title" class="validate" minlength="1" maxlength="30"
+            value="{{ films.title }}" required>
           <label for="film_title">Film Title</label>
         </div>
         <!-- Film Director -->
         <div class="input-field col s6">
           <i class="fas fa-bullhorn"></i>
-          <input id="director" type="text" name="director" class="validate" minlength="5" maxlength="30" required>
+          <input id="director" type="text" name="director" value="{{ films.director }}" class="validate" minlength="5" maxlength="30" required>
           <label for="director">Director</label>
         </div>
         <!-- Film Release Year -->
         <div class="input-field col s6">
             <i class="far fa-calendar-alt"></i>
-            <input id="release_year" type="text" name="release_year" class="datepicker validate" required>
+            <input id="release_year" type="text" name="release_year" value="{{ films.release_year }}" class="datepicker validate" required>
             <label for="release_year">Release Year</label>
           </div>
           <!-- Film Genre -->
           <div class="input-field col s12">
-            <select multiple id="genre_type" name="genre_type" class="validate" required>
-              <option value="" disabled selected>Choose your genre(s)</option>
-              {% for genre in genres%}
-                <option value="{{ genre.genre }}">{{ genre.genre }}</option>
+            <select multiple id="genre_type" name="genre_type[]" class="validate" required>
+              <option value="" disabled >Choose your genre(s)</option>
+              {% for genre in genres %}
+                  {% if genre.genre in films.genre %}
+                    <option value="{{ genre.genre }}" selected>{{ genre.genre }}</option>
+                  {% else %}
+                    <option value="{{ genre.genre }}">{{ genre.genre }}</option>
+                 {% endif %}
               {% endfor %}
             </select>
             <label for="genre_type">Select Genre</label>
@@ -36,14 +41,16 @@
           <!-- Film Synopsis -->
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="synopsis" class="materialize-textarea" name="synopsis" minlength="15" maxlength="300" required></textarea>
+                <textarea id="synopsis" class="materialize-textarea" name="synopsis" minlength="15" maxlength="300" required>
+                  {{- films.synopsis -}}
+                </textarea>
                 <label for="synopsis">Synopsis</label>
               </div>
             </div>
           <!-- Film Rating -->
             <p class="range-field">
                 <label for="rating">Rating</label>
-              <input type="range" id="rating" name="rating" min="1" max="100" required/>
+              <input type="range" id="rating" name="rating" value="{{ films.rating }}" min="1" max="100" required/>
             </p>
           <!-- submit button -->
           <div class="row">
@@ -56,8 +63,8 @@
       </div>
     </form>
   </div>
-
- {% endblock %}
+ 
+{% endblock %}
 
 
 <footer class="page-footer indigo darken-1">

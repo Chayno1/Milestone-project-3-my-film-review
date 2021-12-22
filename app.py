@@ -114,12 +114,13 @@ def add_film():
             "title": request.form.get("film_title"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
-            "genre": request.form.getlist("genre_type"),
+            "genre": request.form.getlist("genre_type[]"),
             "synopsis": request.form.get("synopsis"),
             "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
          mongo.db.films.insert_one(film)
+         print(film)
          flash("Film Successfully Added")
          return redirect(url_for('movies'))
 
@@ -129,7 +130,22 @@ def add_film():
 
 @app.route("/edit_film/<films_id>", methods=["GET", "POST"])
 def edit_film(films_id):
-    films = mongo.db.tasks.find_one({"_id": ObjectId(films_id)})
+    if request.method == "POST":
+         submit = {
+            "title": request.form.get("film_title"),
+            "director": request.form.get("director"),
+            "release_year": request.form.get("release_year"),
+            "genre": request.form.getlist("genre_type[]"),
+            "synopsis": request.form.get("synopsis"),
+            "rating": request.form.get("rating"),
+            "created_by": session["user"]
+        }
+         mongo.db.films.update_one({"_id": ObjectId(films_id)}, { "$set": submit })
+         flash("Film Successfully Updated")
+         return redirect(url_for('movies'))
+
+    films = mongo.db.films.find_one({"_id": ObjectId(films_id)})
+    print("Film", films)
     genres = mongo.db.genres.find().sort("genre", 1)
     return render_template("edit_film.html", films=films, genres=genres)
 

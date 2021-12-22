@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+{{ films }}
+
 <h3 class="add_film">Add Film</h3>
 <div class="row indigo-text white">
     <form class="col s12" method="POST" action="{{url_for('add_film')}}">
@@ -25,7 +27,7 @@
           </div>
           <!-- Film Genre -->
           <div class="input-field col s12">
-            <select multiple id="genre_type" name="genre_type" class="validate" required>
+            <select multiple id="genre_type" name="genre_type[]" class="validate" required>
               <option value="" disabled selected>Choose your genre(s)</option>
               {% for genre in genres%}
                 <option value="{{ genre.genre }}">{{ genre.genre }}</option>

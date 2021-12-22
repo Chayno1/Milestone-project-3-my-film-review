@@ -28,6 +28,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    padding-bottom: 100px;
   }
 
   main {
@@ -48,6 +49,10 @@ body {
     color: rgb(197, 6, 22);
 }
 
+.badge {
+  margin-right: 4px;
+}
+
 
 /*--------------register-page-----------*/
 
@@ -65,4 +70,12 @@ body {
 .add_film {
   font-family: 'Fredoka One', cursive;
   color: white;
+}
+
+/*-------------film list------------------*/
+
+.film_list {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  background-color: white;
 }

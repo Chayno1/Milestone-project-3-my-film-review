@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+        <div class="col s12"></div>
+        <h2 class="film_list">Films List</h2>
             <ul class="collapsible">
               {% for film in films %}
                 <li>
@@ -20,7 +22,13 @@
                       </div>
                   </div>
                   <div class="collapsible-body indigo-text white">
-                    Genre :- {{ film.genre }} <br> <br> Synopsis :- <br> <p>{{ film.synopsis }}</p> 
+                    <span class="left">
+                      {% for genre in film.genre %}
+                        <span class="new badge" data-badge-caption="{{genre}}"></span>
+                      {% endfor %}
+                    </span>
+                    
+                    <br> <br> Synopsis :- <br> <p>{{ film.synopsis }}</p> 
                     <br>
                    <p> Added by :- {{ film.created_by }} </p>
                   </div>
