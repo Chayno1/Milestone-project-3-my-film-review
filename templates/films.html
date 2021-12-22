@@ -8,7 +8,7 @@
                       <div class="col s3">
                         <i class="fas fa-caret-down"></i>
                         {% if session.user %} 
-                        <a href="" class="btn-small red accent-4">Edit</a>
+                        <a href="{{ url_for('edit_film', films_id=film._id) }}" class="btn-small red accent-4">Edit</a>
                         {% else %}
                         {% endif %}
                       </div>

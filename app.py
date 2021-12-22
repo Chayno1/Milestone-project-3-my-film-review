@@ -127,6 +127,11 @@ def add_film():
     return render_template("add_film.html", genres=genres)
 
 
+@app.route("/edit_film/<films_id>", methods=["GET", "POST"])
+def edit_film(films_id):
+    films = mongo.db.tasks.find_one({"_id": ObjectId(films_id)})
+    genres = mongo.db.genres.find().sort("genre", 1)
+    return render_template("edit_film.html", films=films, genres=genres)
 
 
 
