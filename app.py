@@ -111,12 +111,12 @@ def logout():
 def add_film():
     if request.method == "POST":
          film = {
-            "film_title": request.form.get("title"),
+            "title": request.form.get("film_title"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
-            "genre": request.form.getlist("genre"),
+            "genre": request.form.getlist("genre_type"),
             "synopsis": request.form.get("synopsis"),
-            "rating": request.form.get("avg_rating"),
+            "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
          mongo.db.films.insert_one(film)

@@ -8,19 +8,19 @@
       <div class="row">
         <div class="input-field col s6">
           <i class="fas fa-film"></i>
-          <input id="film_title" type="text" class="validate" minlength="1" maxlength="30" required>
+          <input id="film_title" type="text" name="film_title" class="validate" minlength="1" maxlength="30" required>
           <label for="film_title">Film Title</label>
         </div>
         <!-- Film Director -->
         <div class="input-field col s6">
           <i class="fas fa-bullhorn"></i>
-          <input id="director" type="text" class="validate" minlength="5" maxlength="30" required>
+          <input id="director" type="text" name="director" class="validate" minlength="5" maxlength="30" required>
           <label for="director">Director</label>
         </div>
         <!-- Film Release Year -->
         <div class="input-field col s6">
             <i class="far fa-calendar-alt"></i>
-            <input id="release_year" type="text" class="datepicker validate" required>
+            <input id="release_year" type="text" name="release_year" class="datepicker validate" required>
             <label for="release_year">Release Year</label>
           </div>
           <!-- Film Genre -->
@@ -36,7 +36,7 @@
           <!-- Film Synopsis -->
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="synopsis" class="materialize-textarea" minlength="15" maxlength="150" required></textarea>
+                <textarea id="synopsis" class="materialize-textarea" name="synopsis" minlength="15" maxlength="300" required></textarea>
                 <label for="synopsis">Synopsis</label>
               </div>
             </div>
