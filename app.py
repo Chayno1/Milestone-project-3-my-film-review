@@ -150,6 +150,11 @@ def edit_film(films_id):
     return render_template("edit_film.html", films=films, genres=genres)
 
 
+@app.route("/reviews/<films_id>", methods=["GET", "POST"])
+def reviews(films_id):
+    film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
+    return render_template("reviews.html", film=film)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

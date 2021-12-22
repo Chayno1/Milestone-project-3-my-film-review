@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+       
+        <h2 class="film_list">Film Reviews</h2>
+            
+              
+                
+                <div class="divider"></div>
+                <div class="section white-text indigo darken-1">
+                  <h5>Film</h5>
+                  <p>&emsp;<strong>{{ film.title }}</strong></p>
+                  <p>Directed by :- {{ film.director }} &emsp;</p>
+                  <p>Rating : {{ film.rating }} &emsp;</p>
+                  {% for genre in film.genre %}
+                    <span class="new badge" data-badge-caption="{{genre}}"></span>
+                  {% endfor %}
+                </span>
+                <p>{{ film.synopsis }}</p>
+                <p> Added by :- {{ film.created_by }} </p> 
+                </div>
+                <div class="divider"></div>
+                <div class="section white-text indigo darken-1">
+                  <h5>Review</h5>
+                  <p> {{ film.review }}</p>
+                </div>
+                
+                
+
+  {% endblock %}
+    
+    <footer class="page-footer indigo darken-1">
+        <div class="container">
+        <div class="row social-links">
+            <div class="col s4">
+                <a href="https://www.facebook.com/" target="_blank" aria-label="facebook-link"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="col s4">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="instagram-link"><i class="fab fa-instagram-square"></i></a>
+            </div>
+            <div class="col s4">
+                <a href="https://twitter.com/" target="_blank" aria-label="twitter-link"><i class="fab fa-twitter-square"></i></a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
