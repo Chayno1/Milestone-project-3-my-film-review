@@ -7,13 +7,13 @@
      <div class="divider"></div>
           <div class="section white-text indigo darken-1">
             <div class="row">
-              <div class="col s7 push-s5"><span class="flow-text"><p>{{ film.synopsis }}</p><p> Added by :- {{ film.created_by }} </p> 
+              <div class="col s7 push-s5"><span class="flow-text"><p value="synopsis" name="synopsis">{{ film.synopsis }}</p><p> Added by :- {{ film.created_by }} </p> 
                 {% for genre in film.genre %}
-                <span class="new badge" data-badge-caption="{{genre}}"></span>
+                <span class="new badge" data-badge-caption="{{genre}}" name="genre_type[]"></span>
                 {% endfor %}</span>
               </div>
-              <div class="col s5 pull-s7"><span class="flow-text"><h2><strong>{{ film.title }}</strong></h2>
-                <p>Directed by :- {{ film.director }}</p><p>Rating : {{ film.rating }} &emsp;</p></span>
+              <div class="col s5 pull-s7"><span class="flow-text"><h2 name="film_title"><strong>{{ film.title }}</strong></h2>
+                <p name="director">Directed by :- {{ film.director }}</p><p name="rating">Rating : {{ film.rating }} &emsp;</p></span>
                 <a href="#" class="btn-small red accent-4">Add Review</a>
               </div>
             </div> 

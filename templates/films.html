@@ -31,6 +31,10 @@
                     <br> <br> Synopsis :- <br> <p>{{ film.synopsis }}</p> 
                     <br>
                    <p> Added by :- {{ film.created_by }} </p>
+                   {% if session.user %} 
+                        <a href="{{ url_for('edit_film', films_id=film._id) }}" class="btn-small red accent-4">Delete Film</a>
+                        {% else %}
+                        {% endif %}
                   </div>
                 </li>
                 {% endfor %}
