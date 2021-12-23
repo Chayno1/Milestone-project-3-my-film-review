@@ -139,7 +139,7 @@ def add_film():
 @app.route("/edit_film/<films_id>", methods=["GET", "POST"])
 def edit_film(films_id):
     if request.method == "POST":
-         submit = {
+        submit = {
             "title": request.form.get("film_title"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
@@ -148,9 +148,9 @@ def edit_film(films_id):
             "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
-         mongo.db.films.update_one({"_id": ObjectId(films_id)}, { "$set": submit })
-         flash("Film Successfully Updated")
-         return redirect(url_for('movies'))
+        mongo.db.films.update_one({"_id": ObjectId(films_id)}, {"$set": submit})
+        flash("Film Successfully Updated")
+        return redirect(url_for('movies'))
 
     films = mongo.db.films.find_one({"_id": ObjectId(films_id)})
     print("Film", films)
@@ -167,7 +167,7 @@ def reviews(films_id):
 @app.route("/add_review/<films_id>", methods=["GET", "POST"])
 def add_review(films_id):
     if request.method == "POST":
-         review = {
+        review = {
             "title": request.form.get("film_title"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
@@ -177,9 +177,9 @@ def add_review(films_id):
             "review": request.form.getlist("review[]"),
             "created_by": session["user"]
         }
-         mongo.db.reviews.insert_one(review)
-         flash("Review Successfully Added!")
-         return redirect(url_for('movies'))
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added!")
+        return redirect(url_for('movies'))
 
     film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
     genres = mongo.db.genres.find().sort("genre", 1)

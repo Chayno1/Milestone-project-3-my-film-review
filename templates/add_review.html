@@ -7,13 +7,13 @@
      <div class="divider"></div>
           <div class="section white-text indigo darken-1">
             <div class="row">
-              <div class="col s7 push-s5"><span class="flow-text"><p value="synopsis" name="synopsis">{{ film.synopsis }}</p><p> Added by :- {{ film.created_by }} </p> 
+              <div class="col s7 push-s5"><span class="flow-text"><p>{{ film.synopsis }}</p><p> Added by :- {{ film.created_by }} </p> 
                 {% for genre in film.genre %}
-                <span class="new badge" data-badge-caption="{{genre}}" name="genre_type[]"></span>
+                <span class="new badge" data-badge-caption="{{genre}}"></span>
                 {% endfor %}</span>
               </div>
-              <div class="col s5 pull-s7"><span class="flow-text"><h2 name="film_title"><strong>{{ film.title }}</strong></h2>
-                <p name="director">Directed by :- {{ film.director }}</p><p name="rating">Rating : {{ film.rating }} &emsp;</p></span>
+              <div class="col s5 pull-s7"><span class="flow-text"><h2><strong>{{ film.title }}</strong></h2>
+                <p>Directed by :- {{ film.director }}</p><p>Rating : {{ film.rating }} &emsp;</p></span>
                 <a href="#" class="btn-small red accent-4">Add Review</a>
               </div>
             </div> 
@@ -22,6 +22,24 @@
           <div class="section white-text indigo darken-1">
             <div class="row">
               <form method="POST" action="{{url_for('add_review', films_id=film._id)}}">
+                <input type="hidden" value="{{ film.title }}" name="film_title">
+                <input type="hidden" value="{{ film.director }}" name="director">
+                <input type="hidden" value="{{ film.release_year }}" name="release_year">
+                <input type="hidden" value="{{ film.synopsis }}" name="synopsis">
+                <input type="hidden" value="{{ film.rating }}" name="rating">
+                <div class="input-field col s12 genre_option">
+                  <select multiple id="genre_type" name="genre_type[]" class="validate" required hidden>
+                    <option value="" disabled >Choose your genre(s)</option>
+                    {% for genre in genres %}
+                        {% if genre.genre in film.genre %}
+                          <option value="{{ genre.genre }}" selected>{{ genre.genre }}</option>
+                        {% else %}
+                          <option value="{{ genre.genre }}">{{ genre.genre }}</option>
+                       {% endif %}
+                    {% endfor %}
+                  </select>
+                  <label for="genre_type">Select Genre</label>
+                </div>
               <div class="input-field col s12">
                 <textarea id="review" class="materialize-textarea" name="review[]" minlength="15" maxlength="300" required></textarea>
                 <label for="review">Review</label>

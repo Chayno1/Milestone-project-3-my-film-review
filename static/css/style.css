@@ -99,7 +99,12 @@ background-color: white;
 
 }
 
-.home_text{
+.home_text {
   font-family: 'Fredoka One', cursive;
   background-color: white;
+}
+
+
+.genre_option {
+ display: none;
 }
