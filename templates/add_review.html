@@ -2,7 +2,7 @@
 {% block content %}
 
        
-        <h2 class="film_list">Film Reviews</h2>
+        <h2 class="film_list">Add Film Review</h2>
             
      <div class="divider"></div>
           <div class="section white-text indigo darken-1">
@@ -14,17 +14,27 @@
               </div>
               <div class="col s5 pull-s7"><span class="flow-text"><h2><strong>{{ film.title }}</strong></h2>
                 <p>Directed by :- {{ film.director }}</p><p>Rating : {{ film.rating }} &emsp;</p></span>
-                {% if session.user %}
-                <a href="{{ url_for('add_review', films_id=film._id) }}" class="btn-small red accent-4">Add Review</a>
-                {% else %}
-                {% endif %}
+                <a href="#" class="btn-small red accent-4">Add Review</a>
               </div>
             </div> 
           </div>
           <div class="divider"></div>
           <div class="section white-text indigo darken-1">
-            <h5>Review</h5>
-            <p> {{ film.review }}</p>
+            <div class="row">
+              <form method="POST" action="{{url_for('add_review', films_id=film._id)}}">
+              <div class="input-field col s12">
+                <textarea id="review" class="materialize-textarea" name="review[]" minlength="15" maxlength="300" required></textarea>
+                <label for="review">Review</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 center-align">
+                  <button type="submit" class="btn-large indigo darken-1">
+                      Submit Review <i class="fas fa-plus-square right"></i>
+                  </button>
+                </form>
+              </div>
+           </div>
           </div>
                 
                 

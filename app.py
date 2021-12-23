@@ -164,6 +164,23 @@ def reviews(films_id):
     return render_template("reviews.html", film=film)
 
 
+@app.route("/add_review/<films_id>", methods=["GET", "POST"])
+def add_review(films_id):
+    if request.method == "POST":
+         submit = {
+            "review": request.form.getlist("review[]"),
+            "created_by": session["user"]
+        }
+         mongo.db.films.update_one({"_id": ObjectId(films_id)}, { "$set": submit })
+         flash("Review Successfully Added!")
+         return redirect(url_for('movies'))
+
+    film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
+    genres = mongo.db.genres.find().sort("genre", 1)
+    return render_template("add_review.html", film=film, genres=genres)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
