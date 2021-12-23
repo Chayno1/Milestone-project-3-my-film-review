@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 def get_films():
     films = list(mongo.db['films'].find({}))
     users = list(mongo.db['users'].find({}))
-    return render_template("base.html", films=films)
+    return render_template("home.html", films=films)
 
 
 

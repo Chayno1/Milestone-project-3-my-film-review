@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h2 id="home_title">WELCOME TO My Film Review!</h2>
+
+<h4 id="sub_title">Unleash your inner film critic!</h4>
+
+<div class="home_text">
+    <p>MyFilmReview is a website where you can upload/edit/review any film of your choosing!</p>
+    <p>Read reviews posted by others, share thoughts, ideas, opinions on  any film you choose!</p>
+</div>
+<div class="home_text">
+    <p>Click the films button to see all the films currently on the website and read the reviews</p>
+    <h5>Can't find a film?</h5>
+    <p>Register an account and add a film (link on your profile page)</p>
+    <p>Once registered you will also be able to edit films and write your own reviews on the films page</p>
+    <br>
+</div>
+
+
+
+
+
+
+{% endblock %}
+    
+<footer class="page-footer indigo darken-1">
+    <div class="container">
+    <div class="row social-links">
+        <div class="col s4">
+            <a href="https://www.facebook.com/" target="_blank" aria-label="facebook-link"><i class="fab fa-facebook-square"></i></a>
+        </div>
+        <div class="col s4">
+            <a href="https://www.instagram.com/" target="_blank" aria-label="instagram-link"><i class="fab fa-instagram-square"></i></a>
+        </div>
+        <div class="col s4">
+            <a href="https://twitter.com/" target="_blank" aria-label="twitter-link"><i class="fab fa-twitter-square"></i></a>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

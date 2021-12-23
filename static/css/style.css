@@ -80,7 +80,26 @@ body {
   background-color: white;
 }
 
-
+/*-------------login/out text------------------*/
 .login_out {
 background-color: white;
+}
+
+/*-------------Home page------------------*/
+
+#home_title {
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  background-color: black;
+}
+
+#sub_title {
+  font-family: 'Fredoka One', cursive;
+  color: white;
+
+}
+
+.home_text{
+  font-family: 'Fredoka One', cursive;
+  background-color: white;
 }
