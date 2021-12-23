@@ -27,7 +27,7 @@
                 <input type="hidden" value="{{ film.release_year }}" name="release_year">
                 <input type="hidden" value="{{ film.synopsis }}" name="synopsis">
                 <input type="hidden" value="{{ film.rating }}" name="rating">
-                <div class="input-field col s12 genre_option">
+                <div class="input-field col s12 genre_option"hidden>
                   <select multiple id="genre_type" name="genre_type[]" class="validate" required hidden>
                     <option value="" disabled >Choose your genre(s)</option>
                     {% for genre in genres %}
