@@ -91,17 +91,21 @@ background-color: white;
   font-family: 'Fredoka One', cursive;
   color: white;
   background-color: black;
+  text-align: center;
 }
 
 #sub_title {
   font-family: 'Fredoka One', cursive;
   color: white;
+  text-align: center;
 
 }
 
-.home_text {
+#home_text {
   font-family: 'Fredoka One', cursive;
   background-color: white;
+  text-align: center;
+  font-size: 22px;
 }
 
 
