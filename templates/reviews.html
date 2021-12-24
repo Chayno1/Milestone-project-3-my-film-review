@@ -22,9 +22,11 @@
             </div> 
           </div>
           <div class="divider"></div>
+          {% for review in reviews %}
           <div class="section white-text indigo darken-1">
             <h5>Review</h5>
-            <p> {{ film.review }}</p>
+            <p>{{review.get("review")}}</p>
+             {% endfor %}
           </div>
                 
                 

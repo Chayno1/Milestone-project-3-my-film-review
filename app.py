@@ -21,9 +21,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_films")
 def get_films():
+    reviews = list(mongo.db['reviews'].find({}))
     films = list(mongo.db['films'].find({}))
     users = list(mongo.db['users'].find({}))
-    return render_template("home.html", films=films)
+    return render_template("home.html", films=films, reviews=reviews)
 
 
 
@@ -161,7 +162,8 @@ def edit_film(films_id):
 @app.route("/reviews/<films_id>", methods=["GET", "POST"])
 def reviews(films_id):
     film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
-    return render_template("reviews.html", film=film)
+    reviews = mongo.db.reviews.find({"title": film["title"]})
+    return render_template("reviews.html", film=film, reviews=reviews)
 
 
 @app.route("/add_review/<films_id>", methods=["GET", "POST"])
