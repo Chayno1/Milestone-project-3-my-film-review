@@ -136,6 +136,11 @@ To keep the website simple and easy to use I'm going to have the same header on 
 
 - This will display social media links for the webpage. This will be displayed at the bottom of all pages.
 
+### Background Image
+
+- The background image is being loaded straight from url source. The image is used as the background throughout the website.
+
+
 ### colours 
 
 - I have choosen to use a combination of 6 basic colours for the website, the first 3 being the main colours of the website and the last three as colours for buttons. The six colours are:
@@ -171,11 +176,12 @@ To keep the website simple and easy to use I'm going to have the same header on 
 ## DESIGN CHANGES 
 
 Creating the website the wireframe sketched layout was used as a guide to the overall look of the website.
+- url(https://rwrant.co.za/wp-content/uploads/2013/11/Movie-Montage.jpg)
 
 
 ### Site Navigation
 
-![cut sections of header image](assets/images/design-images/navbar.jpeg)
+![cut sections of navbar image](images/navbar.jpeg)
 
 - The navbar was made using materialize 
 
@@ -258,18 +264,23 @@ design-images -------- contains all images used in README.md
 
 ## FINAL PRODUCT
 
-### Main page top
+### Main page 
 
+![home page view](images/home-page.jpeg)
 
-![home page top half view](assets/images/design-images/home-page-top.jpeg)
+### Film page
 
-### Main page bottom
+![film page view](images/film-list.jpeg)
 
-![home page bottom half view](assets/images/design-images/home-page-bottom.jpeg)
+### login Page
 
-### Game Page
+- This exactly same as register page except page title
 
-![Game page view](assets/images/design-images/game-page.jpeg)
+![login page view](images/login:reg.jpeg)
+
+### Review page
+
+![Review page view](images/film-reviews.jpeg)
 
 
 ## References/ Credits 
