@@ -197,6 +197,8 @@ Creating the website the wireframe sketched layout was used as a guide to the ov
 
 Folders 
 
+images -------------- contains all images used in README.md
+
 templates -----------contains .html templates(base, home, films, register, login, profile, reviews, edit_film,
                                                add_film, add_review, )
 
@@ -242,19 +244,19 @@ design-images -------- contains all images used in README.md
 ## CODE BUGS/FIXES
 
 
-- Struggled to get color change to work in js and struggled to calculate red rectangles in Javascript
-![JavaScript colorChange function issue](assets/images/design-images/colorchange-pic-issue.jpeg)
+- Struggled to get reviews to load onto review page, could not get revies from database
+![Python issue](images/reviewerror.jpeg)
 
-- Found soulution by counting red rectangles with in the color change function. 
-![JavaScript colorChange function solution](assets/images/design-images/colorChange-pic-solution.jpeg)
+- Found soulution was using dot notation incorrectly. 
+![Python issue solution](images/review-fix.jpeg)
 
-- Navbar and header background colors not working on safari browser. Tried several alterations to html and css to fix issue. Assumed this may be due to bootstrap code/bootstrap code link as rest of the site works as expected. Found partial solution in re doing css code for these areas. put css code through https://autoprefixer.github.io/ and replaced css file with this. All attempts have partly fixed issue, still issue with main title text color.
+- Delete function not working correctly. Delete film function was not deleting film, website responded correctly but database was not being updated.
 
-![bootstrap issue](assets/images/design-images/bootstrap-issue-fix.jpeg)
+![database delete issue](images/Delete-errror.jpeg)
 
-<br>
+- Issue resolved. Incorrect indentation on app.py file.
 
-![bootstrap issue navbar](assets/images/design-images/bootstrap-issue.jpeg)
+![database delete issue solution](images/delete-fix.jpeg)
 
 
 
