@@ -166,7 +166,7 @@ To keep the website simple and easy to use I'm going to have the same header on 
 
 - basic page layout -
 
-<img src="assets/images/design-images/home-page.jpeg">
+<img src="images/base.jpeg">
 
 
 ### [Back to top](#contents)
