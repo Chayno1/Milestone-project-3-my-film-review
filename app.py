@@ -159,6 +159,15 @@ def edit_film(films_id):
     return render_template("edit_film.html", films=films, genres=genres)
 
 
+@app.route("/delete_film/<films_id>")
+def delete_film(films_id):
+    mongo.db.films.delete_one({"_id": ObjectId(films_id)})
+    flash("film Successfully Deleted")
+    return redirect(url_for("movies"))
+
+
+
+
 @app.route("/reviews/<films_id>", methods=["GET", "POST"])
 def reviews(films_id):
     film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
@@ -186,6 +195,13 @@ def add_review(films_id):
     film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
     genres = mongo.db.genres.find().sort("genre", 1)
     return render_template("add_review.html", film=film, genres=genres)
+
+
+@app.route("/delete_review/<reviews_id>")
+def delete_review(reviews_id):
+    reviews = mongo.db.reviews.delete_one({"_id": ObjectId(reviews_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("movies"))
 
 
 
