@@ -115,14 +115,6 @@ def logout():
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
     if request.method == "POST":
-        # check if film already exists in db
-        existing_film = mongo.db.users.find_one(
-            {"title": request.form.get("title")})
-
-        if existing_film:
-            flash("Film already exists")
-            return redirect(url_for("movies"))
-
         film = {
             "title": request.form.get("film_title"),
             "director": request.form.get("director"),
