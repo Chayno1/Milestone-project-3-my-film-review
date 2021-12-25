@@ -307,8 +307,6 @@ In building the website I used materialize I used this for
 - I got the code for the markdown collapsible section from -
 https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab
 
-![image of code from markdown collapse source](assets/images/design-images/content-collapse-image.jpeg)
-
 
 ### [Back to top](#contents)
 
@@ -320,13 +318,12 @@ My website is deployed on heroku -  https://my-film-review-project-3.herokuapp.c
 
 How I deployed -
 
-1. Signed in on Github.com
-2. opened up my repository Milestone-project-2-Red-Rec-Counting
-3. opened settings and clicked on pages
-4. In pages clicked on source and changed from none to main then saved.
-5. opened live url to check website.
-6. made minor changes to image links as background links didnt intially load.
-7. Rechecked live url and proceeded to test website.
+1. Signed in on Heroku.com and created a new app called my-film-review-project-3
+2. I then connected my github repository Chayno1/Milestone-project-3-my-film-review in the deploy method of the app 
+3. I edited the apps config vars so they had the correct details and matched my projects details.
+4. In deploy section clicked on automatic deploy and launched website.
+5. opened live url to check website
+6. Rechecked live url and proceeded to test website.
 
 
 ## Evaluation 
@@ -345,22 +342,24 @@ How I deployed -
 
 ##### Website business needs
 
- - To explain the type of website it is
+ - To explain what the website is about and how it works to the user
 
-- To explain how to play the game
+- To display film data to the user
 
-- make the game easily accessible
+- Give the user the ability to upload their own films
 
-- A way for anyone visiting to play 
+-  Give the user the ability to upload their own reviews of films
 
-- give the opportunity to count success or failure of the game
+- Display updated films and reviews to all users
 
-Evaluation : The website covers all 5 points on business needs, 
-- The main page is clear in presenting an online game
-- Clear instructions are provide on the main page with images to showcase what to look for.
-- The website is only made of two pages making access to start the game only a click away.
-- Several links to the game page are provide on the home page(about) which are easily accessible
-- The game tallies up the result of each game so the user can keep track of their score.
+- Secure access for users so not anyone can muniplate website content.
+
+Evaluation : The website covers all points on business needs, 
+- The main page is clear in presenting what the website is about and how to use it
+- The main data for films is clearly presented and easy to use for the user
+- The edit, add, delete options are displayed and easy access for logged in users only.
+- Film data and reviews are accessible for everyone who visits the site.
+- Only registered users can edit,add or delete films and reviews on the website.
 
 Conclusion : The website achieves the busines needs to a basic level
 
@@ -392,15 +391,25 @@ Conclusion: The website achieves the goals of design needs to a basic level, How
 
 ####  website user needs 
 
-- What website they are on, and what service it is providing.
+- How to navigate the website
 
-- quickly establish where to find the information they are looking for.
+- To search for specific films 
 
-- Quickly get playing the game
+- Ability to add new films to the site
 
-- To play the game without any issues with in the game
+- Ability to edit films on the site
 
-Evaluation : 
+- Ability to write reviews for films on the site
+
+- Ability to delete reviews for films on the site
+
+Evaluation : The website gives the user the desired experience asked they would want.
+- Instructions on how the site works
+- The ability to look up films and read other peoples reviews
+- The ability to add films to the website for others to review
+- Add their own reviews to films on the website
+- The ability to edit or delete films on the website
+- The ability to remove reviews on the website
 
 Conclusion: All the goals are achieved to a basic level.  
 
@@ -419,40 +428,41 @@ Conclusion: Website works as expected. All functions work as expected, The datab
 
   #### website links, responsive design,deployment
  
- Evaluation : After deploying the website I first checked that each page loaded properly which was successful after some minor adjustments image file links. I then tested the responsive design by changeing the screen size and observing how the website reacted, in which the website changed as designed apart from minor issue referenced in the [code bugs/fixes](#code-bugs/fixes).
+ Evaluation : After deploying the website I first checked that each page loaded properly which was successful. I then tested the responsive design by changeing the screen size and observing how the website reacted, in which the website changed as designed apart from minor issue later noticed with the title, still tobe resolved.
  Next I checked all the links, the navbar links to all the pages, the footer links, social media links and main body links. I made sure that all links on all pages worked correctly and went to the correct location, also whether they opened in a new tab or changed the page as set in the coding. The website passed all these tests.
 
 Conclusion : The frontend of the website is operating and presenting correctly as designed in the coding, no issues with overall interaction.
 
-#### html, css, file organisation
+#### html, css
 
-file organisation :
-I kept the images separate into 2 different categories design-images, images. The design-images folder is for all images used in the README.md, images folder is for all images used on the website. The style.css is contained in the CSS folder and the script.js is contained in the js folder. All three folders CSS,JS,images folders are contained in one folder called assets.
+html : To test my html coding first I went through each page checking for any obvious mistakes I could notice myself. I then put my code through a coder validator at https://validator.w3.org/ , This did pick up one error, however this doesn't seem to relate properly to code on the page and as it does not effect the operation of the website no further action has been taken. results displayed below :
 
-html : To test my html coding first I went through each page checking for any obvious mistakes I could notice myself. I then put my code through a coder validator at https://validator.w3.org/ , results displayed below :
-
-![image of html checker results](assets/images/design-images/html-pic-error.jpeg)
+![image of html checker results](images/html-checker.jpeg)
 
 <br>
 
-![image of html checker results](assets/images/design-images/html-pic-success.jpeg)
 
-CSS : To test my css code I again went through my style.css sheet and visually looked for any obvious errors I noticed. I then put my code through an online css validator at https://jigsaw.w3.org/css-validator/ . This did flag up loads of minor errors, however I was unable to interpret what the results were indicating as the error code was not in my css file. My conclusion is the errors were to do with background code from the bootstrap classes I used on my website, also possibly the verison of bootstrap being used. As my course is not yet complete I'm unable to act at this time till I learn more about different codes. Results displayed below:
+CSS : To test my css code I again went through my style.css sheet and visually looked for any obvious errors I noticed. I then put my code through an online css validator at https://jigsaw.w3.org/css-validator/ . This did flag up 6 errors all of which are connected to font awesome coding and 1 error with in the materialize coding. These errors do not affect the operation of the website. As my course is not yet complete I'm unable to act at this time till I learn more about different codes and how to edit hidden third party coding. Results displayed below:
 
-![image of css checker results](assets/images/design-images/css-check-top.jpeg)
-![image of css checker results](assets/images/design-images/css-check-bot.jpeg)
+![image of css checker results](images/css-val-checker.jpeg)
  
  lighthouse: An additional test I performed was with lighthouse in google chrome developers tools. I ran this test to get an overall read out of how my website was performing, results below :
 
- ![image of lighthouse test results](assets/images/design-images/lighthouse.jpeg)
+ ![image of lighthouse test results](images/lighthouse-test.jpeg)
 
  #### Website Function Test
 
- - To test the function of the website I played the game and used the website in a number of different ways to test the response and how well the interaction worked between user and website. In this I checked all possible user options and made sure the website was functional.
+ - To test the function of the website I played around with the website in different ways. I viewd it from a casual browsers perspective looking at the different pages availiable and what i could do. I then signed in as a registered user and tested all the possible options and functions I have as a registered user, making sure my actions completed properly like editing a film, deleting a film, adding a review and deleteing a review.
 
- - To test the JavaScript I put the JavaScript code through a JavaScript checker JSHint.com. Although it had 15 warnings, the code had no major faults. At this point the 15 warnings were not fully understood, they suggest a better use of code is possible.
+ - To test the JavaScript I put the JavaScript code through a JavaScript checker JSHint.com. Only two warnings otherwise the javascript passed. The two warnings not fuly understood and look possibly in reference to materialize coding.
 
- ![image of JSHint test results](assets/images/design-images/JSHint.jpeg)
+ ![image of JSHint test results](images/JSHint.jpeg)
+
+ - To test the python I put the app.py code through pep8 checker at http://pep8online.com/ which only flagged minor issues mainly with spacing between functions. Also put code throug another checker at https://www.pythonchecker.com/ which the code scored 100%.
+
+ ![image of python test1 results](images/pep8-test1.jpeg)
+
+ ![image of python test2 results](images/pep8-test2.jpeg)
 
 
 
@@ -463,7 +473,8 @@ Based on all the testing I have performed on the website I feel the site functio
 
 ## Future changes/ add ons 
 
-
+- Add users reviews to their own profile page so they can view all the reviews they have made.
+- Add promo images for the films to make it more visuallly appealling.
 
 #### Fix Issues
 

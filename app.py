@@ -59,8 +59,6 @@ def register():
     return render_template("register.html")
 
 
-
-
 @app.route("/movies", methods=["GET", "POST"])
 def movies():
     films = list(mongo.db['films'].find({}))
@@ -172,8 +170,6 @@ def delete_film(films_id):
     return redirect(url_for("movies"))
 
 
-
-
 @app.route("/reviews/<films_id>", methods=["GET", "POST"])
 def reviews(films_id):
     film = mongo.db.films.find_one({"_id": ObjectId(films_id)})
@@ -208,7 +204,6 @@ def delete_review(reviews_id):
     reviews = mongo.db.reviews.delete_one({"_id": ObjectId(reviews_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for("movies"))
-
 
 
 if __name__ == "__main__":
