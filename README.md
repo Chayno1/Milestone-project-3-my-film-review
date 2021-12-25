@@ -481,7 +481,9 @@ Based on all the testing I have performed on the website I feel the site functio
 - Add media queries so the website functions properly on all size screens.
 
 
-#### new features
+#### new future features
+
+- Change display order of films with a dropdown menu at top underneath search bar
 
 
 
