@@ -258,6 +258,8 @@ design-images -------- contains all images used in README.md
 
 ![database delete issue solution](images/delete-fix.jpeg)
 
+- New issue with code for checking if film has already been added to database, issue tempararely solved by removing this code, new code needed to fix issue.
+
 
 
 #### Issues not fixed
@@ -453,6 +455,7 @@ CSS : To test my css code I again went through my style.css sheet and visually l
  #### Website Function Test
 
  - To test the function of the website I played around with the website in different ways. I viewd it from a casual browsers perspective looking at the different pages availiable and what i could do. I then signed in as a registered user and tested all the possible options and functions I have as a registered user, making sure my actions completed properly like editing a film, deleting a film, adding a review and deleteing a review.
+ - error found when trying to add new film. New film could not be added as all new films were said to already exist on database. Error with coding. Temperary fix was to remove this section of code, causing new issue of duplicated films being added to database by user.
 
  - To test the JavaScript I put the JavaScript code through a JavaScript checker JSHint.com. Only two warnings otherwise the javascript passed. The two warnings not fuly understood and look possibly in reference to materialize coding.
 
@@ -478,6 +481,7 @@ Based on all the testing I have performed on the website I feel the site functio
 
 #### Fix Issues
 
+- Checking if film has already been added to database.
 - Add media queries so the website functions properly on all size screens.
 
 
